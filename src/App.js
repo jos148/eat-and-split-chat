@@ -54,7 +54,7 @@ export default function App() {
   }
 
   return (
-    <div className="app">
+    <div className="app" >
       <div className="sidebar">
         <FriendList friends={friends} selectedFriend={selectedFriend} onSelection={handleSelection} />
 
@@ -65,7 +65,11 @@ export default function App() {
         </Button>
       </div>
 
-      {selectedFriend && <FormSplitBill selectedFriend={selectedFriend} onSplitBill={handleSplitBill} />}
+      {selectedFriend && 
+      <FormSplitBill 
+      selectedFriend={selectedFriend}
+      onSplitBill={handleSplitBill}
+      key={selectedFriend.id} />}
     </div>
   );
 }
